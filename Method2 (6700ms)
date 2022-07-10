@@ -51,6 +51,3 @@ namespace Tests
         }
     }
 }
-
-//https://stackoverflow.com/a/10409439
-//https://stackoverflow.com/a/18894720
