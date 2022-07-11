@@ -21,7 +21,7 @@ namespace Tests
 
         private void event_Form1_Shown(object sender, EventArgs e)
         {
-            string File = @"C:\Users\Sam\Downloads\1.png";
+            string File = @"D:\Downloads\1.png";
             int NumberOfLoops = 5000;
             ImagingBitmapInfo BitmapInfo = BitmapFormatInfo(File);
 
