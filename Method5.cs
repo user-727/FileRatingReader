@@ -10,6 +10,38 @@ using System.Windows.Media.Imaging;
 
 namespace Tests
 {
+    public partial class Form1 : Form
+    {
+        List<string> Files = new List<string>();
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void event_Form1_Shown(object sender, EventArgs e)
+        {
+            string File = @"C:\Users\Sam\Downloads\1.png";
+            int NumberOfLoops = 5000;
+            ImagingBitmapInfo BitmapInfo = BitmapFormatInfo(File);
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            for (int i = 0; i < NumberOfLoops; i++)
+            {
+                //int Rating = bitmapInfo.MetaData.Rating;
+
+                if (Rating == 0)
+                {
+                    Files.Add(File);
+                }
+            }
+
+            sw.Stop();
+            MessageBox.Show("Time: " + sw.ElapsedMilliseconds.ToString() + "ms (" + NumberOfLoops.ToString() + "x)");
+        }
+    }
 
     public class ImagingBitmapInfo
     {
@@ -334,38 +366,4 @@ namespace Tests
         }
     }
     public static ImagingBitmapInfo BitmapPixelFormat(FileStream stream) => new ImagingBitmapInfo(stream);
-
-    public partial class Form1 : Form
-    {
-        List<string> Files = new List<string>();
-
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void event_Form1_Shown(object sender, EventArgs e)
-        {
-            string File = @"C:\Users\Sam\Downloads\1.png";
-            int NumberOfLoops = 5000;
-            ImagingBitmapInfo BitmapInfo = BitmapFormatInfo(File);
-
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            for (int i = 0; i < NumberOfLoops; i++)
-            {
-                var file = ShellFile.FromFilePath(File);
-                int Rating = Convert.ToInt32(file.Properties.System.Rating.Value);
-
-                if (Rating == 0)
-                {
-                    Files.Add(File);
-                }
-            }
-
-            sw.Stop();
-            MessageBox.Show("Time: " + sw.ElapsedMilliseconds.ToString() + "ms (" + NumberOfLoops.ToString() + "x)");
-        }
-    }
 }
