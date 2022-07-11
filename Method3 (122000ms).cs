@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
 using Shell32;
 
@@ -27,7 +26,6 @@ namespace Tests
 
             for (int i = 0; i < NumberOfLoops; i++)
             {
-
                 string Rating = GetExtendedFileAttribute(File, "Rating");
 
                 if (Convert.ToInt32(Rating) == 0)
@@ -69,9 +67,7 @@ namespace Tests
                 }
             }
 
-
             return retValue;
-
         }
     }
 }
