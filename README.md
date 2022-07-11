@@ -1,0 +1,10 @@
+The goal of this project is to compare different ways of reading the different ways of reading the [rating](https://docs.microsoft.com/en-us/windows/win32/properties/props-system-rating) (or any other extended file attribute) of a file in order to find the most efficient one in terms of performance.
+
+Each file contains a different "method" of completing the same action, which is to read the rating of a specific file 5000 times, put the name of the file in a list if it is unrated (rating is equals to 0 or null), and output the time in milliseconds that was needed to execute the benchmark in a messagebox.
+
+**Important notes:**
+
+* Method #2, #3 and #4 require the use of the reference `Microsoft Shell Controls and Automation`. You can find more information on how to add references to your solution in Visual studio with [this guide](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2022).
+* Method #5 requires the use of the the references `PresentationCore`, `System.Xaml`and `WindowsBase`.
+* I am not able to get Method #5 to compile at the moment, probably because of my incorrect implementation I get multiple definition errors.
+```
