@@ -23,7 +23,7 @@ namespace Tests
         {
             string File = @"D:\Downloads\1.png";
             int NumberOfLoops = 5000;
-            var bitmapInfo = BitmapPixelFormat(File);
+            var bitmapInfo = ImagingBitmapInfo.BitmapPixelFormat(File);
 
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -42,18 +42,18 @@ namespace Tests
             MessageBox.Show("Time: " + sw.ElapsedMilliseconds.ToString() + "ms (" + NumberOfLoops.ToString() + "x)");
         }
 
-        public static ImagingBitmapInfo BitmapPixelFormat(string FileName)
-        {
-            using (var stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.None))
-            {
-                return BitmapPixelFormat(stream);
-            }
-        }
-
-        public static ImagingBitmapInfo BitmapPixelFormat(FileStream stream) => new ImagingBitmapInfo(stream);
-
         public class ImagingBitmapInfo
         {
+            public static ImagingBitmapInfo BitmapPixelFormat(string FileName)
+            {
+                using (var stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    return BitmapPixelFormat(stream);
+                }
+            }
+
+            public static ImagingBitmapInfo BitmapPixelFormat(FileStream stream) => new ImagingBitmapInfo(stream);
+
             Dictionary<string, string> ImgTypeLongNames;
             readonly FramesInfo framesInfo = new FramesInfo();
 
