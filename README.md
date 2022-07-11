@@ -7,4 +7,5 @@ Each file contains a different "method" of completing the same action, which is 
 * Method #2, #3 and #4 require the use of the reference `Microsoft Shell Controls and Automation`. You can find more information on how to add references to your solution in Visual studio with [this guide](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2022).
 * Method #5 requires the use of the the references `PresentationCore`, `System.Xaml`and `WindowsBase`.
 * I am not able to get Method #5 to compile at the moment, probably because of my incorrect implementation I get multiple definition errors.
+* I did not come up with most of the code to read the rating of a file, apart from the one in Method #1. Check the [StackOverflow post I made](https://stackoverflow.com/questions/72925511/how-to-read-the-rating-of-a-file-efficiently-in-a-c-sharp-winforms-app-or-other) to see where sources to where I've taken the code from.
 ```
