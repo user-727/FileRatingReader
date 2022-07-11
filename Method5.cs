@@ -49,8 +49,8 @@ namespace Tests
                 return BitmapPixelFormat(stream);
             }
         }
-        public static ImagingBitmapInfo BitmapPixelFormat(FileStream stream) => new ImagingBitmapInfo(stream);
 
+        public static ImagingBitmapInfo BitmapPixelFormat(FileStream stream) => new ImagingBitmapInfo(stream);
 
         public class ImagingBitmapInfo
         {
