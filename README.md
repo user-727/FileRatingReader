@@ -4,6 +4,7 @@ Each file contains a different "method" of completing the same action, which is 
 
 **Important notes:**
 
+* The `Microsoft.WindowsAPICodePack-Core` and `Microsoft-WindowsAPICodePack-Shell` are required to run Method #1, but may also be required for other methods. Follow [this guide](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio) to add NuGet packages to your solution in Visual Studio.
 * Method #2, #3 and #4 require the use of the reference `Microsoft Shell Controls and Automation`. You can find more information on how to add references to your solution in Visual studio with [this guide](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2022).
 * Method #5 requires the use of the the references `PresentationCore`, `System.Xaml`and `WindowsBase`.
 * I am not able to get Method #5 to compile at the moment, probably because of my incorrect implementation I get multiple definition errors.
