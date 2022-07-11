@@ -9,7 +9,6 @@ namespace Tests
     public partial class Form1 : Form
     {
         List<string> Files = new List<string>();
-        Shell32.Shell app = new Shell32.Shell();
 
         public Form1()
         {
