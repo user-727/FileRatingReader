@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Linq;
 
 namespace Tests
 {
@@ -21,7 +22,7 @@ namespace Tests
 
         private void event_Form1_Shown(object sender, EventArgs e)
         {
-            string File = @"D:\Downloads\1.png";
+            string File = @"D:\Downloads\2.png";
             int NumberOfLoops = 5000;
             var bitmapInfo = ImagingBitmapInfo.BitmapPixelFormat(File);
 
@@ -30,7 +31,7 @@ namespace Tests
 
             for (int i = 0; i < NumberOfLoops; i++)
             {
-                int Rating = bitmapInfo.Metadata.Rating;
+                int Rating = bitmapInfo.Metadata?.Rating ?? 0;
 
                 if (Rating == 0)
                 {
