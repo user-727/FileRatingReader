@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
 using System.IO;
-using System.Windows;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Linq;
 
 namespace Tests
 {
@@ -57,17 +53,16 @@ namespace Tests
 
             public ImagingBitmapInfo(FileStream stream)
             {
-                var coder = BitmapDecoder.Create(
-                    stream,
-                    BitmapCreateOptions.PreservePixelFormat,
-                    BitmapCacheOption.Default);
+                var coder = BitmapDecoder.Create(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
 
                 BitmapSource source = coder.Frames[0];
                 var metadata = (BitmapMetadata)source.Metadata;
+
                 try
                 {
                     Metadata = new MetadataInfo(metadata);
                 }
+
                 catch (NotSupportedException)
                 {
                     Metadata = null;
